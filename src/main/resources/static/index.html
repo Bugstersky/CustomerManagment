@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Customer Managment</title>
+  </head>
+  <body>
+    <div class="customer-form">
+    <form action="/add" method="POST">
+      <p>Enter values to add a customer.</p>
+
+      <div>
+        <label for="firstName">First name:</label>
+        <input name="first" id="firstName" placeholder="First Name" />
+      </div>
+      <div>
+        <label for="lastName">Last name:</label>
+        <input name="last" id="lastName" placeholder="Last Name" />
+      </div>
+        <button class="btn left_btn" >Add customer</button>
+     
+    </form>
+    <form action="/list" method="GET">
+      <button class="btn right_btn">List customers</button>
+    </form>
+  </div>
+  </body>
+</html>
