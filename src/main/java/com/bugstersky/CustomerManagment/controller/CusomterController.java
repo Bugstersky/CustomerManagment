@@ -2,10 +2,7 @@ package com.bugstersky.CustomerManagment.controller;
 
 import com.bugstersky.CustomerManagment.model.Customer;
 import com.bugstersky.CustomerManagment.repository.CustomerRepository;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class CusomterController {
@@ -34,4 +31,9 @@ public class CusomterController {
         return customerRepository.findCustomerById(id);
     }
 
+    @DeleteMapping("/delete/{id}")
+    public String deleteCustomer(@RequestParam Integer id){
+        customerRepository.deleteById(id);
+        return "Customer had been deleted from repo!";
+    }
 }
