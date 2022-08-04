@@ -1,4 +1,4 @@
-package com.bugstersky.CustomerManagment.model;
+package com.bugstersky.CustomerManagment.custpack.controller.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
