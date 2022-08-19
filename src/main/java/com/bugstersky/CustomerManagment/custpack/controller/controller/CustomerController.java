@@ -43,12 +43,12 @@ public class CustomerController implements ErrorController {
         return customerRepository.findCustomerById(id);
     }
 
-    // To repair !!!
-    @RequestMapping("/delete/{id}")
-    public Customer deleteCustomerById(@PathVariable Integer id) throws Exception {
+
+    @DeleteMapping("/delete/{id}")
+    public void deleteCustomerById(@PathVariable Integer id) {
         if (id == null) {
-            throw new Exception("Record not found");
+            throw new NullPointerException("Record not found");
         }
-        return customerRepository.deleteCustomerById(id);
+         customerRepository.deleteById(id);
     }
 }
