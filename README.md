@@ -21,7 +21,7 @@ Simple application using Spring Boot framework
 
 ### GUI:
 #### 1) Main view
-![image](https://user-images.githubusercontent.com/98978049/182952127-87277357-bbbb-4bd8-8527-90d66ca36712.png)
+![image](https://user-images.githubusercontent.com/98978049/188438128-7441fe39-d39b-497e-a498-4c87611e68ca.png)
 
 #### 2) Information about adding customer   ( Add customer button is not working )
 
