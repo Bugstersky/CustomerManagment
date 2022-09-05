@@ -11,7 +11,6 @@ import java.util.List;
 import java.util.Map;
 
 
-@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api")
 public class CustomerController {
@@ -23,7 +22,7 @@ public class CustomerController {
         this.customerRepository = customerRepository;
     }
 
-    @PostMapping("/customers")
+    @PostMapping(value = "/customers")
     public Customer createCustomer(@RequestBody Customer customer) {
         return customerRepository.save(customer);
     }
@@ -33,7 +32,7 @@ public class CustomerController {
         return customerRepository.findAll();
     }
 
-    @GetMapping("/find/{id}")
+    @GetMapping("/customers/find/{id}")
     public ResponseEntity<Customer> getCustomerById(@PathVariable Long id) {
         Customer customer = customerRepository.findById(id).
                 orElseThrow(() -> new RuntimeException("Customer with id: " + id + " doesn't exist"));
@@ -58,7 +57,6 @@ public class CustomerController {
     public ResponseEntity<Map<String, Boolean>> deleteEmployee(@PathVariable Long id) {
         Customer customer = customerRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Customer with id: " + id + " doesn't exist"));
-
         customerRepository.delete(customer);
         Map<String, Boolean> response = new HashMap<>();
         response.put("deleted", Boolean.TRUE);
