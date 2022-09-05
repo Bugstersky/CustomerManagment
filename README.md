@@ -11,10 +11,11 @@ Simple application using Spring Boot framework
 
 ![get](https://user-images.githubusercontent.com/98978049/188421118-6a7fa129-55bf-461d-b58e-6ef8ea10111d.png)
 
-#### 3) Data from created table 
+### pgadmin View
+
+#### 1) Data from created table 
 
 ![pgadmin](https://user-images.githubusercontent.com/98978049/188422038-3fd766b9-abc9-4028-9c2b-2110c24507c7.png)
-
 
 
 
