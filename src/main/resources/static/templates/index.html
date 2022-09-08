@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="rg http://www.thymeleaf.org" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="./css/style.css"/>
+    <title>Customer Management</title>
+</head>
+<body>
+<div class="customer-form">
+    <form action="api/addCustomer" method="POST">
+        <p>Enter values to add a customer.</p>
+        <div>
+            <label for="firstName">First name:</label>
+            <input type="text" name="firstName" id="firstName" placeholder="First Name" autocomplete="off"/>
+        </div>
+        <div>
+            <label for="lastName">Last name:</label>
+            <input type="text" name="lastName" id="lastName" placeholder="Last Name" autocomplete="off"/>
+        </div>
+        <div>
+            <label for="emailId">Email:</label>
+            <input type="text" name="email" id="emailId" placeholder="xyz@gmail.com" autocomplete="off"/>
+        </div>
+        <button class="btn left_btn">Add customer</button>
+
+    </form>
+    <form action="api/customers" method="GET">
+        <button class="btn right_btn">List customers</button>
+    </form>
+</div>
+</body>
+</html>

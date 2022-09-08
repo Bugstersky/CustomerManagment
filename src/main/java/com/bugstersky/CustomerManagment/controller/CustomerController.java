@@ -3,6 +3,7 @@ package com.bugstersky.CustomerManagment.controller;
 import com.bugstersky.CustomerManagment.entites.Customer;
 import com.bugstersky.CustomerManagment.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,7 +16,7 @@ import java.util.Map;
 @RequestMapping("/api")
 public class CustomerController {
 
-    @Autowired
+
     private final CustomerRepository customerRepository;
 
     public CustomerController(CustomerRepository customerRepository) {
@@ -40,13 +41,13 @@ public class CustomerController {
     }
 
     @PutMapping("/customers/{id}")
-    public ResponseEntity<Customer> updateEmployee(@PathVariable Long id, @RequestBody Customer employeeDetails) {
+    public ResponseEntity<Customer> updateEmployee(@PathVariable Long id, @RequestBody Customer customerInfo) {
         Customer customer = customerRepository.findById(id)
-                .orElseThrow(() ->new RuntimeException("Customer with id: " + id + " doesn't exist"));
+                .orElseThrow(() -> new RuntimeException("Customer with id: " + id + " doesn't exist"));
 
-        customer.setFirstName(customer.getFirstName());
-        customer.setLastName(customer.getLastName());
-        customer.setEmailId(customer.getEmailId());
+        customer.setFirstName(customerInfo.getFirstName());
+        customer.setLastName(customerInfo.getLastName());
+        customer.setEmailId(customerInfo.getEmailId());
 
         Customer updatedCustomer = customerRepository.save(customer);
         return ResponseEntity.ok(updatedCustomer);
